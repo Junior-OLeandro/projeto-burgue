@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+}
+
+main::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 80vh;
+
+    background: rgb(0,0,0);
+background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.9612219887955182) 48%, rgba(0,0,0,0.8743872549019608) 64%, rgba(0,0,0,0) 82%) no-repeat;
+}
+
+@font-face {
+    font-family: 'bernhc';
+    src: url('../fontes/BERNHC.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'fradm';
+    src: url('../fontes/FRADM.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+main .opcoes {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+main .opcoes.selecionado {
+    display: block;
+}
+
+main .opcoes .imagem {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover; /* ou 'contain' se quiser que apareça inteira mesmo com espaço */
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+    }
+
+.conteudo {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    max-width: 400px;
+    z-index: 1;
+}
+
+.conteudo .titulo {
+    color: white;
+    font-size: 48px;
+    font-family: 'bernhc';
+    font-weight: 100;
+    margin-bottom: 14px;
+    text-shadow: 
+    0 0 5px black, 
+    0 0 10px black, 
+    0 0 15px black,
+    0 0 20px black,
+    0 0 30px black;
+}
+
+.conteudo .descricao {
+    color: white;
+    font-size: 25px;
+    font-family: 'fradm';
+    line-height: 30px;
+    font-weight: 400;
+    max-width: 400px;
+    text-shadow: 
+    0 0 5px black, 
+    0 0 10px black, 
+    0 0 15px black,
+    0 0 20px black,
+    0 0 30px black;
+}
+
+.botoes {
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 180px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    gap: 13px;
+}
+
+.botoes .botao {
+    border: none;
+    background-color: grey;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    transition: transform 0.3 se ease;
+    border-radius: 50%;
+}
+
+.botoes .botao img {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.botoes .botao.selecionado {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px grey;
+}
+
